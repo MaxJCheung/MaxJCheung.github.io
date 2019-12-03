@@ -92,8 +92,6 @@
                             
                               <a class="tag" href="/tags/#技巧" title="技巧">技巧</a>
                             
-                              <a class="tag" href="/tags/#博客" title="博客">博客</a>
-                            
                               <a class="tag" href="/tags/#Android" title="Android">Android</a>
                             
                         </div>
@@ -148,14 +146,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -219,59 +217,36 @@
                 post-container">
 
                 <blockquote>
-<p>Ported Theme of <a href="https://github.com/Huxpro/huxpro.github.io" target="_blank" rel="noopener">Hux Blog</a>, Thank <a href="https://github.com/Huxpro" target="_blank" rel="noopener">Huxpro</a> for designing such a flawless theme.</p>
-<p>This BeanTech theme created by <a href="http://beantech.org" target="_blank" rel="noopener">YuHsuan</a> modified from the original Porter <a href="http://kaijun.rocks/hexo-theme-huxblog/" target="_blank" rel="noopener">Kaijun</a></p>
+<p>在MBA大师Android端APP4.8.0版本发布的时候，我们发现乐固的PC工具下线了，我们只能在线上进行加壳操作，再在本地进行重新签名。由于渠道包很多，所以参考了网上的脚本，修改了一个Mac环境下<br>
+适用的Python脚本</p>
 </blockquote>
-<h1><span id="live-demo"></span></h1>
 <hr>
-<p><img src="http://beantech.org/img/beantech-desktop.png" alt="BeanTech Desktop"></p>
-<h1><span id="usage">Usage</span></h1>
+<p><img src="hexo-theme-beantech/bg-android-resign.jpg" alt="BeanTech Desktop"></p>
+<h1><span id="使用">使用</span></h1>
 <hr>
-<p>I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!</p>
-<p>Let’s begin!!!</p>
-<h2><span id="init">Init</span></h2>
+<p>在使用脚本前，你需要进行如下操作：</p>
+<h2><span id="配置python27">配置Python2.7</span></h2>
 <hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech</span><br><span class="line"><span class="built_in">cd</span> hexo-beantech</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h2><span id="modify">Modify</span></h2>
+<p>Mac默认已经安装了Python2.7版本，在你的终端中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python</span><br></pre></td></tr></table></figure>
+<p>就可以查看当前Python的版本<br>
+如果没有Python2的话可以使用brew安装Python2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install python</span><br></pre></td></tr></table></figure>
+<h2><span id="创建脚本">创建脚本</span></h2>
 <hr>
-<p>Modify <code>_config.yml</code> file with your own info.<br>
-Especially the section:</p>
-<h3><span id="deployment">Deployment</span></h3>
-<p>Replace to your own repo!</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;yourAccount&gt;/&lt;repo&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">&lt;your-branch&gt;</span></span><br></pre></td></tr></table></figure>
-<h3><span id="sidebar-settings">Sidebar settings</span></h3>
-<p>Copy your avatar image to <code>&lt;root&gt;/img/</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span> <span class="literal">true</span>    <span class="comment"># whether or not using Sidebar.</span></span><br><span class="line"><span class="attr">sidebar-about-description:</span> <span class="string">"&lt;your description&gt;"</span></span><br><span class="line"><span class="attr">sidebar-avatar:</span> <span class="string">img/&lt;your</span> <span class="string">avatar</span> <span class="string">path&gt;</span></span><br></pre></td></tr></table></figure>
-<p>and activate your personal widget you like</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">widgets:</span>         <span class="comment"># here are widget you can use, you can comment out</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">featured-tags</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">short-about</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">recent-posts</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">friends-blog</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">archive</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">category</span></span><br></pre></td></tr></table></figure>
-<p>if you want to add sidebar widget, please add at <code>layout/_widget</code>.</p>
-<h3><span id="signature-setup">Signature Setup</span></h3>
-<p>Copy your signature image to <code>&lt;root&gt;/img/signature</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">signature:</span> <span class="literal">true</span>   <span class="comment"># show signature</span></span><br><span class="line"><span class="attr">signature-img:</span> <span class="string">img/signature/&lt;your-signature-ID&gt;</span></span><br></pre></td></tr></table></figure>
-<h3><span id="go-to-top-icon-setup">Go to top icon Setup</span></h3>
-<p>My icon is using iron man, you can change to your own icon at <code>css/image</code>.</p>
-<h3><span id="post-tag">Post tag</span></h3>
-<p>You can decide to show post tags or not.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_posts_tag:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><img src="home_posts_tag-true.png" alt="home_posts_tag-true"></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_posts_tag:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p><img src="home_posts_tag-false.png" alt="home_posts_tag-false"></p>
-<h3><span id="markdown-render">Markdown render</span></h3>
-<p>My markdown render engine plugin is <a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="noopener">hexo-renderer-markdown-it</a>.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">'“”‘’'</span></span><br></pre></td></tr></table></figure>
-<p>and if you want to change the header anchor ‘ℬ’, you can go to <code>layout/post.ejs</code> to change it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span>(<span class="string">"https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        anchors.options = &#123;</span><br><span class="line">          visible: <span class="string">'hover'</span>,</span><br><span class="line">          placement: <span class="string">'left'</span>,</span><br><span class="line">          icon: ℬ <span class="comment">// this is the header anchor "unicode" icon</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-<h2><span id="hexo-basics">Hexo Basics</span></h2>
-<hr>
-<p>Some hexo command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"&lt;post name&gt;"</span> <span class="comment"># you can change post to another layout if you want</span></span><br><span class="line">hexo clean &amp;&amp; hexo generate <span class="comment"># generate the static file</span></span><br><span class="line">hexo server <span class="comment"># run hexo in local environment</span></span><br><span class="line">hexo deploy <span class="comment"># hexo will push the static files automatically into the specific branch(gh-pages) of your repo!</span></span><br></pre></td></tr></table></figure>
-<h1><span id="have-fun-_">Have fun ^_^</span></h1>
-<hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>Please <a class="github-button" href="https://github.com/YenYuHsuan/hexo-theme-beantech" data-icon="octicon-star" aria-label="Star YenYuHsuan/hexo-theme-beantech on GitHub" target="_blank" rel="noopener">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/YenYuHsuan" aria-label="Follow @YenYuHsuan on GitHub" target="_blank" rel="noopener">Follow</a> would also be appreciated!<br>
-Peace!</p>
+<p>你最好新建一个文件夹，再创建一个文件，我们可以命名为&quot;<a href="http://MutilSign.py" target="_blank" rel="noopener">MutilSign.py</a>&quot;<br>
+而后，将如下代码拷贝到文件中并保存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment">#coding:UTF-8</span></span><br><span class="line">import shutil</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line">jksFile = <span class="string">''</span></span><br><span class="line">storePassword = <span class="string">''</span></span><br><span class="line">keyAlias = <span class="string">''</span></span><br><span class="line">keyPassword = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前目录中所有的apk源包</span></span><br><span class="line">src_apks = []</span><br><span class="line"><span class="comment"># python3 : os.listdir()即可，这里使用兼容Python2的os.listdir('.')</span></span><br><span class="line">originApkdir=os.getcwd()+<span class="string">'/originApks/'</span></span><br><span class="line">output_dir = <span class="string">'output/'</span></span><br><span class="line">	<span class="comment"># 目录不存在则创建</span></span><br><span class="line"><span class="keyword">if</span> not os.path.exists(output_dir):</span><br><span class="line">	os.mkdir(output_dir)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    shutil.rmtree(output_dir,True)</span><br><span class="line">    os.mkdir(output_dir)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(originApkdir):</span><br><span class="line">    <span class="keyword">if</span> os.path.isfile(os.path.join(originApkdir,file)):</span><br><span class="line">        extension = os.path.splitext(file)[1][1:]</span><br><span class="line">        <span class="keyword">if</span> extension <span class="keyword">in</span> <span class="string">'apk'</span>:</span><br><span class="line">            src_apks.append(os.path.join(originApkdir,file))</span><br><span class="line">try:</span><br><span class="line">    <span class="keyword">for</span> src_apk <span class="keyword">in</span> src_apks:</span><br><span class="line">        <span class="comment"># file name (with extension)</span></span><br><span class="line">        src_apk_file_path = os.path.abspath(src_apk)</span><br><span class="line">        <span class="comment"># file name (with extension)</span></span><br><span class="line">        src_apk_file_name = os.path.basename(src_apk)</span><br><span class="line">		<span class="comment"># 分割文件名与后缀</span></span><br><span class="line">        temp_list = os.path.splitext(src_apk_file_name)</span><br><span class="line">		<span class="comment"># name without extension</span></span><br><span class="line">        src_apk_name = temp_list[0]</span><br><span class="line">		<span class="comment"># 后缀名，包含.   例如: ".apk "</span></span><br><span class="line">        src_apk_extension = temp_list[1]</span><br><span class="line">		<span class="comment"># 创建生成目录</span></span><br><span class="line">		<span class="comment">#目标文件路径</span></span><br><span class="line">        target_apk = output_dir + src_apk_name + src_apk_extension</span><br><span class="line">		<span class="comment">#签名后的文件路径</span></span><br><span class="line">        signer_apk_path = output_dir + src_apk_name + <span class="string">'_signed'</span> + src_apk_extension</span><br><span class="line">		<span class="comment">#拼装签名命令</span></span><br><span class="line">		<span class="comment"># signer_str = 'cmd.exe /k apksigner sign --ks ' + jksFile + ' --ks-pass pass:' + storePassword + ' --ks-key-alias ' + keyAlias + ' --key-pass pass:' + keyPassword + ' --out ' + signer_apk + ' ' + src_apk</span></span><br><span class="line">        signer_str = <span class="string">'jarsigner -verbose -keystore '</span>+ jksFile + <span class="string">' -storepass '</span>+storePassword+<span class="string">' -signedjar '</span>+ <span class="string">' '</span> + signer_apk_path + <span class="string">' '</span> + src_apk_file_path +<span class="string">' '</span>+keyAlias</span><br><span class="line">        <span class="comment"># print signer_str</span></span><br><span class="line">        <span class="built_in">print</span> <span class="string">'sign '</span>+src_apk_file_name+<span class="string">' waiting...'</span></span><br><span class="line">        <span class="comment">#执行签名命令</span></span><br><span class="line">        signer_result = os.popen(signer_str)</span><br><span class="line">            <span class="comment">#输出签名命令执行结果</span></span><br><span class="line">        <span class="keyword">if</span>(signer_result.read() != <span class="string">''</span>):</span><br><span class="line">            <span class="built_in">print</span> <span class="string">'signer_result:\t'</span>, <span class="string">'success'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span> <span class="string">'signer_result:\t'</span>, <span class="string">'fail result: '</span>+signer_result</span><br><span class="line">except Exception, e:</span><br><span class="line">	<span class="built_in">print</span> <span class="string">'Exception:\t'</span>, repr(e)</span><br><span class="line"><span class="built_in">print</span> <span class="string">'All done!  Any key to exit'</span>.decode(<span class="string">'UTF-8'</span>).encode(<span class="string">'GBK'</span>)</span><br><span class="line"><span class="comment">#等待输入</span></span><br><span class="line">raw_input()</span><br></pre></td></tr></table></figure>
+<p>很简单对吗？</p>
+<h2><span id="配置签名信息">##配置签名信息</span></h2>
+<p>将你的Keystore文件放到这个目录中来，修改脚本中的jksFile storePassword keyAlias keyPassword字段为对应值</p>
+<h2><span id="创建源文件目录">##创建源文件目录</span></h2>
+<p>在刚才的文件夹里新建一个文件夹，并命名为&quot;originApks&quot;，将待签名的Apk文件统统放进来吧</p>
+<h2><span id="签名">##签名</span></h2>
+<p>打开终端，<a href="http://xn--MutilSign-u17zx81d.py" target="_blank" rel="noopener">运行MutilSign.py</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install python</span><br></pre></td></tr></table></figure>
+<p>不出意外的话，运行完毕后会在目录中生成一个&quot;output&quot;文件夹，签完名的Apk就在这个文件夹中了<br>
+PS:每次开始签名都会自动删除之前的output，所以不用手动删除哦</p>
 
                 
 
@@ -307,7 +282,7 @@ Peace!</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"></span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Usage</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Init</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Modify</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">Deployment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">Sidebar settings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">Signature Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">Go to top icon Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">Post tag</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.6.</span> <span class="toc-nav-text">Markdown render</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Hexo Basics</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Have fun ^_^</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">配置Python2.7</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">创建脚本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">##配置签名信息</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">##创建源文件目录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">##签名</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -328,8 +303,6 @@ Peace!</p>
                     <div class="tags">
                        
                           <a class="tag" href="/tags/#技巧" title="技巧">技巧</a>
-                        
-                          <a class="tag" href="/tags/#博客" title="博客">博客</a>
                         
                           <a class="tag" href="/tags/#Android" title="Android">Android</a>
                         
